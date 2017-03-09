@@ -1,0 +1,10 @@
+version: '2'
+services:
+  logentries:
+    image: logentries/docker-logentries
+    container_name: logentries
+    restart: always
+    command: '-t $LOGENTRIES_TOKEN $LOGENTRIES_ADDITIONAL_OPTIONS'
+    privileged: false
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
